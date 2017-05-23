@@ -1,0 +1,49 @@
+{
+  "name": "jec-jars",
+  "version": "1.0.0",
+  "description": "JEC JARS - Provides support for annotations that make it easy for developers to build RESTful web services.",
+  "main": "lib/com/jec/jars/index",
+  "types": "types/jec-jars.d.ts",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pechemann/jec-jars.git"
+  },
+  "keywords": [
+    "JEC",
+    "JARS",
+    "RESTful",
+    "web services",
+	"REST",
+    "JavaScript",
+    "TypeScript",
+    "server",
+    "applications"
+  ],
+  "author": "Pascal ECHEMANN",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/pechemann/jec-jars/issues"
+  },
+  "homepage": "https://github.com/pechemann/jec-jars#readme",
+  "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-mocha-test": "^0.13.2",
+    "grunt-ts": "^6.0.0-beta.15",
+    "grunt-typedoc": "^0.2.4",
+    "mocha": "^3.3.0",
+    "typedoc": "^0.6.0",
+    "typescript": "^2.3.2",
+    "typings": "^2.1.1"
+  },
+  "peerDependencies": {
+    "jec-commons": "^1.0.3"
+  }
+}
