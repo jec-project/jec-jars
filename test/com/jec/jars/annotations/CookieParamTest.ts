@@ -17,68 +17,42 @@
 import "mocha";
 import * as chai from "chai";
 import * as spies from "chai-spies";
-import {ClassLoader, DecoratorConnectorManager, JcadContextManager, JcadContext,
-        JcadContextFactory, DecoratorConnector, AbstractDecoratorConnector,
-        Decorator} from "jec-commons";
+import {DecoratorConnectorManager, JcadContextManager, JcadContext } from "jec-commons";
 import {JarsConnectorRefs} from "../../../../../src/com/jec/jars/jcad/JarsConnectorRefs";
 import * as params from "../../../../../utils/test-utils/annotations/Params";
-
-const expect = chai.expect;
-chai.use(spies);
-
-// Utilities:
-let connector:DecoratorConnector = null;
-let context:JcadContext = null;
-let ClassRef:any = null;
-let annotated:any = null;
-class TestConnector extends AbstractDecoratorConnector {}
-class TestDecorator implements Decorator {
-  decorate(target:any, propertyKey:string|symbol, parameterIndex:number):void {}
-}
-const TEST_DECORATOR:Decorator = new TestDecorator();
-const DCM:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-const CTXM:JcadContextManager = JcadContextManager.getInstance();
-const VALID_CLASS:string = process.cwd() + "/utils/test-utils/annotations/CookieParamTestClass";
-const LOADER:ClassLoader = new ClassLoader();
-const PROPERTY_KEY:string = "cookieParamInfo";
-const PARAMETER_INDEX:number = 0;
 
 // Annotation to test:
 import * as CookieParamAnnotation from "../../../../../src/com/jec/jars/annotations/CookieParam";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/CookieParamTestUtils";
+
+// Chai declarations:
+const expect:any = chai.expect;
+chai.use(spies);
+
 // Test:
 describe("CookieParam", ()=> {
 
+  let context:JcadContext = null;
+
   before(()=> {
-    let factory:JcadContextFactory = new JcadContextFactory();
-    connector = new TestConnector(JarsConnectorRefs.COOKIE_PARAM_CONNECTOR_REF, TEST_DECORATOR);
-    context = factory.create();
-    CTXM.addContext(JarsConnectorRefs.COOKIE_PARAM_CONNECTOR_REF, context);
-    DCM.addConnector(connector, context);
+    context = utils.initContext();
   });
 
   after(()=> {
-    CTXM.removeContext(JarsConnectorRefs.COOKIE_PARAM_CONNECTOR_REF);
-    DCM.removeConnector(JarsConnectorRefs.COOKIE_PARAM_CONNECTOR_REF, context);
-    connector = null;
-    context = null;
+    utils.resetContext(context);
   });
 
   beforeEach(()=> {
-    ClassRef = LOADER.loadClass(VALID_CLASS);
-    annotated = new ClassRef();
-  });
-
-  afterEach(()=> {
-    ClassRef = null;
-    annotated =null;
+    utils.buildClassRef();
   });
 
   describe("@CookieParam", ()=> {
 
-    let ctxmSpy:any = chai.spy.on(CTXM, "getContext");
-    let dcmSpy:any = chai.spy.on(DCM, "getDecorator");
-    let decoratorSpy:any = chai.spy.on(TEST_DECORATOR, "decorate");
+    let ctxmSpy:any = chai.spy.on(JcadContextManager.getInstance(), "getContext");
+    let dcmSpy:any = chai.spy.on(DecoratorConnectorManager.getInstance(), "getDecorator");
+    let decoratorSpy:any = chai.spy.on(utils.TEST_DECORATOR, "decorate");
     let annotationSpy:any = chai.spy.on(CookieParamAnnotation, "CookieParam");
 
     it("should invoke the JcadContextManager with the JarsConnectorRefs.COOKIE_PARAM_CONNECTOR_REF reference", function() {
@@ -90,11 +64,11 @@ describe("CookieParam", ()=> {
     });
     
     it("should invoke the annotation decorator with the right parameters", function() {
-      expect(annotationSpy).to.have.been.called.with(PROPERTY_KEY, PARAMETER_INDEX);
+      expect(annotationSpy).to.have.been.called.with(utils.PROPERTY_KEY, utils.PARAMETER_INDEX);
     });
     
     it("should invoke the registered decorator with the right parameters", function() {
-      expect(decoratorSpy).to.have.been.called.with(PROPERTY_KEY, PARAMETER_INDEX);
+      expect(decoratorSpy).to.have.been.called.with(utils.PROPERTY_KEY, utils.PARAMETER_INDEX);
     });
   });
 });

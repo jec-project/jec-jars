@@ -17,69 +17,43 @@
 import "mocha";
 import * as chai from "chai";
 import * as spies from "chai-spies";
-import {ClassLoader, DecoratorConnectorManager, JcadContextManager, JcadContext,
-        JcadContextFactory, DecoratorConnector, AbstractDecoratorConnector,
-        Decorator} from "jec-commons";
+import {DecoratorConnectorManager, JcadContextManager, JcadContext} from "jec-commons";
 import {JarsConnectorRefs} from "../../../../../src/com/jec/jars/jcad/JarsConnectorRefs";
 import {HttpMethodParams} from "../../../../../src/com/jec/jars/annotations/core/HttpMethodParams";
 import * as params from "../../../../../utils/test-utils/annotations/Params";
 
-const expect = chai.expect;
-chai.use(spies);
-
-// Utilities:
-let connector:DecoratorConnector = null;
-let context:JcadContext = null;
-let ClassRef:any = null;
-let annotated:any = null;
-class TestConnector extends AbstractDecoratorConnector {}
-class TestDecorator implements Decorator {
-  decorate(target:any, key:string, descriptor:PropertyDescriptor,
-           params?:HttpMethodParams):any { return target; }
-}
-const TEST_DECORATOR:Decorator = new TestDecorator();
-const DCM:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
-const CTXM:JcadContextManager = JcadContextManager.getInstance();
-const VALID_CLASS:string = process.cwd() + "/utils/test-utils/annotations/TRACETestClass";
-const KEY:string = "traceMethod";
-const LOADER:ClassLoader = new ClassLoader();
-
 // Annotation to test:
 import * as TRACEAnnotation from "../../../../../src/com/jec/jars/annotations/TRACE";
+
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/TRACETestUtils";
+
+// Chai declarations:
+const expect:any = chai.expect;
+chai.use(spies);
 
 // Test:
 describe("TRACE", ()=> {
 
+  let context:JcadContext = null;
+
   before(()=> {
-    let factory:JcadContextFactory = new JcadContextFactory();
-    connector = new TestConnector(JarsConnectorRefs.TRACE_CONNECTOR_REF, TEST_DECORATOR);
-    context = factory.create();
-    CTXM.addContext(JarsConnectorRefs.TRACE_CONNECTOR_REF, context);
-    DCM.addConnector(connector, context);
+    context = utils.initContext();
   });
 
   after(()=> {
-    CTXM.removeContext(JarsConnectorRefs.TRACE_CONNECTOR_REF);
-    DCM.removeConnector(JarsConnectorRefs.TRACE_CONNECTOR_REF, context);
-    connector = null;
-    context = null;
+    utils.resetContext(context);
   });
 
   beforeEach(()=> {
-    ClassRef = LOADER.loadClass(VALID_CLASS);
-    annotated = new ClassRef();
-  });
-
-  afterEach(()=> {
-    ClassRef = null;
-    annotated =null;
+    utils.buildClassRef();
   });
 
   describe("@TRACE", ()=> {
 
-    let ctxmSpy:any = chai.spy.on(CTXM, "getContext");
-    let dcmSpy:any = chai.spy.on(DCM, "getDecorator");
-    let decoratorSpy:any = chai.spy.on(TEST_DECORATOR, "decorate");
+    let ctxmSpy:any = chai.spy.on(JcadContextManager.getInstance(), "getContext");
+    let dcmSpy:any = chai.spy.on(DecoratorConnectorManager.getInstance(), "getDecorator");
+    let decoratorSpy:any = chai.spy.on(utils.TEST_DECORATOR, "decorate");
     let annotationSpy:any = chai.spy.on(TRACEAnnotation, "TRACE");
 
     it("should invoke the JcadContextManager with the JarsConnectorRefs.TRACE_CONNECTOR_REF reference", function() {
@@ -95,7 +69,7 @@ describe("TRACE", ()=> {
     });
     
     it("should invoke the registered decorator with the right method name and parameters", function() {
-      expect(decoratorSpy).to.have.been.called.with(KEY, params.HTTP_METHOD_PARAMS);
+      expect(decoratorSpy).to.have.been.called.with(utils.KEY, params.HTTP_METHOD_PARAMS);
     });
   });
 });

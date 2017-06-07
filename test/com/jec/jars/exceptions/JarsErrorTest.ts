@@ -20,6 +20,9 @@ import {expect} from "chai";
 // Class to test:
 import {JarsError} from "../../../../../src/com/jec/jars/exceptions/JarsError";
 
+// Utilities:
+import * as utils from "../../../../../utils/test-utils/utilities/JarsErrorTestUtils";
+
 // Test:
 describe("JarsError", ()=> {
 
@@ -32,11 +35,8 @@ describe("JarsError", ()=> {
 
   describe("#message", ()=> {
     it("should return the same string as passed in the class constructor", function() {
-      let error:JarsError = new JarsError(ERROR_MSG);
-      expect(error.message).to.equal(ERROR_MSG);
+      let error:JarsError = new JarsError(utils.ERROR_MSG);
+      expect(error.message).to.equal(utils.ERROR_MSG);
     });
   });
 });
-
-// Utilities:
-const ERROR_MSG:string = "invalid action";

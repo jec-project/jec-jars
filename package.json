@@ -1,6 +1,6 @@
 {
   "name": "jec-jars",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JEC JARS - Provides support for annotations that make it easy for developers to build RESTful web services.",
   "main": "lib/com/jec/jars/index",
   "types": "types/jec-jars.d.ts",
@@ -28,6 +28,9 @@
     "url": "https://github.com/pechemann/jec-jars/issues"
   },
   "homepage": "https://github.com/pechemann/jec-jars#readme",
+  "dependencies": {
+    "jec-commons": "^1.1.1"
+  },
   "devDependencies": {
     "@types/mocha": "^2.2.41",
     "chai": "^3.5.0",
@@ -44,6 +47,6 @@
     "typings": "^2.1.1"
   },
   "peerDependencies": {
-    "jec-commons": "^1.0.4"
+    "jec-commons": "^1.1.1"
   }
 }
