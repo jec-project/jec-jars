@@ -1,5 +1,15 @@
 # JEC JARS Project: Update Release Notes
 
+<a name="jec-jars-1.0.2"></a>
+## **1.0.1** (2017-06-07)
+
+### Bug Fixes
+
+### Features
+
+- **Gruntfile**: adding support for types generation
+- Dependencies upgrade
+
 <a name="jec-jars-1.0.1"></a>
 ## **1.0.1** (2017-06-06)
 

@@ -7,6 +7,4 @@
 
 declare module "jec-jars" {
 
-/*PLACEHOLDER*/
-
-}
+/*PLACEHOLDER*/}
