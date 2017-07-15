@@ -1,6 +1,6 @@
 {
   "name": "jec-jars",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "JEC JARS - Provides support for annotations that make it easy for developers to build RESTful web services.",
   "main": "lib/com/jec/jars/index",
   "types": "types/jec-jars.d.ts",
