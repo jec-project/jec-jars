@@ -1,8 +1,8 @@
 {
   "name": "jec-jars",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JEC JARS - Provides support for annotations that make it easy for developers to build RESTful web services.",
-  "main": "lib/com/jec/jars/index",
+  "main": "lib/com/jec/jec-jars-index",
   "types": "types/jec-jars.d.ts",
   "scripts": {
     "test": "mocha --recursive"
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/pechemann/jec-jars#readme",
   "dependencies": {
-    "jec-commons": "^1.1.2"
+    "jec-commons": "^1.1.3"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.41",
@@ -44,10 +44,9 @@
     "grunt-typedoc": "^0.2.4",
     "mocha": "^3.3.0",
     "typedoc": "^0.6.0",
-    "typescript": "^2.3.2",
-    "typings": "^2.1.1"
+    "typescript": "^2.4.2"
   },
   "peerDependencies": {
-    "jec-commons": "^1.1.2"
+    "jec-commons": "^1.1.3"
   }
 }

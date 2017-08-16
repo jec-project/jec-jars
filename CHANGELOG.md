@@ -1,5 +1,16 @@
 # JEC JARS Project: Update Release Notes
 
+<a name="jec-jars-1.0.4"></a>
+## **1.0.4** (2017-08-16)
+
+### Bug Fixes
+
+### Features
+
+- **build**: adding build script to npm install process for GlassCat instal optimisation
+- **index.ts**: refactoring index.ts file for better types generation
+- Dependencies upgrade
+
 <a name="jec-jars-1.0.3"></a>
 ## **1.0.3** (2017-06-15)
 
