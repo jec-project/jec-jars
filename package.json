@@ -5,7 +5,8 @@
   "main": "lib/com/jec/jec-jars-index",
   "types": "types/jec-jars.d.ts",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "postinstall": "grunt build"
   },
   "repository": {
     "type": "git",
