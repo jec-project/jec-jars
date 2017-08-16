@@ -39,6 +39,7 @@ module.exports = function(grunt) {
         emitDecoratorMetadata: true,
         experimentalDecorators: true,
         alwaysStrict: true
+      }
     },
     test : {
       src: ["test/**/*.ts", "utils/**/*.ts"],
