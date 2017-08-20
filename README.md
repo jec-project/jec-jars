@@ -65,7 +65,7 @@ The documentation generator is [TypeDoc](http://typedoc.org/)
 
 ## Update Release Notes
 
-**Current stable release:** [1.0.5](CHANGELOG.md#jec-jars-1.0.5)
+**Current stable release:** [1.0.6](CHANGELOG.md#jec-jars-1.0.6)
  
 For a complete listing of release notes for all JEC JARS update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 
