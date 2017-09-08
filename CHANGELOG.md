@@ -1,5 +1,14 @@
 # JEC JARS Project: Update Release Notes
 
+<a name="jec-jars-1.0.7"></a>
+## **1.0.7** (2017-09-07)
+
+### Bug Fixes
+
+### Features
+
+- Dependencies upgrade
+
 <a name="jec-jars-1.0.6"></a>
 ## **1.0.6** (2017-08-20)
 
