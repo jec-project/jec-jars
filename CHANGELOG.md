@@ -7,6 +7,7 @@
 
 ### Features
 
+- **crossDomainPolicy**: adding the `crossDomainPolicy` member to the `HttpMethodParams` interface
 - Dependencies upgrade
 
 <a name="jec-jars-1.0.6"></a>

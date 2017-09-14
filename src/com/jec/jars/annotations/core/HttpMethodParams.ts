@@ -36,4 +36,9 @@ export interface HttpMethodParams {
    * Specifies the MIME media types of representations a resource can produce.
    */
   produces?:string;
+
+  /**
+   * Specifies the cross domain access policy.
+   */
+  crossDomainPolicy?:string;
 }
