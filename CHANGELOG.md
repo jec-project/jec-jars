@@ -7,7 +7,8 @@
 
 ### Features
 
-- **crossDomainPolicy**: adding the `crossDomainPolicy` member to the `HttpMethodParams` interface
+- **RoutePathParams**: adding the `consumes`, `produces` and `crossDomainPolicy` members to the `RoutePathParams` interface
+- **HttpMethodParams**: adding the `crossDomainPolicy` member to the `HttpMethodParams` interface
 - Dependencies upgrade
 
 <a name="jec-jars-1.0.6"></a>

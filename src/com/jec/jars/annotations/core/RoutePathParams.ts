@@ -40,4 +40,21 @@ export interface RoutePathParams {
    * Specifies the version for the associated <code>@RootPath</code> annotation.
    */
   version?:RootPathVersion;
+  
+  /**
+   * Specifies the MIME media types of representations all resources can respond
+   * to for the specified path.
+   */
+  consumes?:string;
+  
+  /**
+   * Specifies the MIME media types of representations all resources can produce
+   * for the specified path.
+   */
+  produces?:string;
+  
+  /**
+   * Specifies the cross domain access policy for the specified path.
+   */
+  crossDomainPolicy?:string;
 }
