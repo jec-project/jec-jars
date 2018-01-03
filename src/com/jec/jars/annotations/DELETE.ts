@@ -38,7 +38,6 @@ public deleteMethod(Exit exit:Function):void {
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.
- * @annotation
  */
 export function DELETE(params?:HttpMethodParams):Function {
 
