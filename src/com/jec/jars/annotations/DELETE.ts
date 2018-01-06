@@ -1,6 +1,6 @@
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
-//   Copyright 2016-2017 Pascal ECHEMANN.
+//   Copyright 2016-2018 Pascal ECHEMANN.
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ import {JcadContext, JcadContextManager, DecoratorConnectorManager} from "jec-co
 import {HttpMethodParams} from "./core/HttpMethodParams";
 
 ////////////////////////////////////////////////////////////////////////////////
-// CAD API API
+// JCAD API
 ////////////////////////////////////////////////////////////////////////////////
 
 const DCM:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
@@ -45,7 +45,7 @@ export function DELETE(params?:HttpMethodParams):Function {
                                        descriptor:PropertyDescriptor):Function {
     
     ////////////////////////////////////////////////////////////////////////////
-    // CAD API
+    // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
     var ctx:JcadContext =

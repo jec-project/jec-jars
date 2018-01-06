@@ -1,6 +1,6 @@
 //  DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 //
-//   Copyright 2016-2017 Pascal ECHEMANN.
+//   Copyright 2016-2018 Pascal ECHEMANN.
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import {JarsConnectorRefs} from "../jcad/JarsConnectorRefs";
 import {JcadContext, JcadContextManager, DecoratorConnectorManager} from "jec-commons";
 
 ////////////////////////////////////////////////////////////////////////////////
-// CAD API API
+// JCAD API
 ////////////////////////////////////////////////////////////////////////////////
 
 const DCM:DecoratorConnectorManager = DecoratorConnectorManager.getInstance();
@@ -42,7 +42,7 @@ export function ResourcePath(path:string):Function {
  return function(target:any):Function {
     
     ////////////////////////////////////////////////////////////////////////////
-    // CAD API
+    // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
     var ctx:JcadContext =
