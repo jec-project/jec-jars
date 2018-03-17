@@ -45,7 +45,7 @@ export function ResourcePath(path:string):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                  CTXM.getContext(JarsConnectorRefs.RESOURCE_PATH_CONNECTOR_REF);
     return DCM.getDecorator(JarsConnectorRefs.RESOURCE_PATH_CONNECTOR_REF, ctx)
               .decorate(target, path);

@@ -47,7 +47,7 @@ export function RequestBody(target:any, propertyKey:string | symbol,
   // JCAD API
   //////////////////////////////////////////////////////////////////////////////
 
-  var ctx:JcadContext = 
+  const ctx:JcadContext = 
                   CTXM.getContext(JarsConnectorRefs.REQUEST_BODY_CONNECTOR_REF);
   DCM.getDecorator(JarsConnectorRefs.REQUEST_BODY_CONNECTOR_REF, ctx)
       .decorate(target, propertyKey, parameterIndex);

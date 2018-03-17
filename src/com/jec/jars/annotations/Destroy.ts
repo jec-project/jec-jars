@@ -44,7 +44,7 @@ export function Destroy():Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                        CTXM.getContext(JarsConnectorRefs.DESTROY_CONNECTOR_REF);
     return DCM.getDecorator(JarsConnectorRefs.DESTROY_CONNECTOR_REF, ctx)
               .decorate(target, key, descriptor);

@@ -48,7 +48,7 @@ export function DELETE(params?:HttpMethodParams):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                         CTXM.getContext(JarsConnectorRefs.DELETE_CONNECTOR_REF);
     return DCM.getDecorator(JarsConnectorRefs.DELETE_CONNECTOR_REF, ctx)
               .decorate(target, key, descriptor, params);

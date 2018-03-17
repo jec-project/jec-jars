@@ -52,7 +52,7 @@ export function RootPath(params:RoutePathParams):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                      CTXM.getContext(JarsConnectorRefs.ROOT_PATH_CONNECTOR_REF);
     return DCM.getDecorator(JarsConnectorRefs.ROOT_PATH_CONNECTOR_REF, ctx)
               .decorate(target, params);

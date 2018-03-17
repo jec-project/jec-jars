@@ -46,7 +46,7 @@ export function RootPathRefs(pathRefs:string[]):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext =
+    const ctx:JcadContext =
                 CTXM.getContext(JarsConnectorRefs.ROOT_PATH_REFS_CONNECTOR_REF);
     return DCM.getDecorator(JarsConnectorRefs.ROOT_PATH_REFS_CONNECTOR_REF, ctx)
               .decorate(target, pathRefs);

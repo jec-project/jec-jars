@@ -47,7 +47,7 @@ export function Exit(target:Object, propertyKey:string | symbol,
   // JCAD API
   //////////////////////////////////////////////////////////////////////////////
 
-  var ctx:JcadContext = CTXM.getContext(JarsConnectorRefs.EXIT_CONNECTOR_REF);
+  const ctx:JcadContext = CTXM.getContext(JarsConnectorRefs.EXIT_CONNECTOR_REF);
   DCM.getDecorator(JarsConnectorRefs.EXIT_CONNECTOR_REF, ctx)
      .decorate(target, propertyKey, parameterIndex);
 }

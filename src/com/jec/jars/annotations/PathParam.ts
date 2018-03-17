@@ -48,7 +48,7 @@ export function PathParam(target:any, propertyKey:string | symbol,
   // JCAD API
   //////////////////////////////////////////////////////////////////////////////
 
-  var ctx:JcadContext = 
+  const ctx:JcadContext = 
                     CTXM.getContext(JarsConnectorRefs.PATH_PARAM_CONNECTOR_REF);
   DCM.getDecorator(JarsConnectorRefs.PATH_PARAM_CONNECTOR_REF, ctx)
       .decorate(target, propertyKey, parameterIndex);

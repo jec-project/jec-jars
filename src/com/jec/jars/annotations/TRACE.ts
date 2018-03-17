@@ -48,7 +48,7 @@ export function TRACE(params?:HttpMethodParams):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext = 
+    const ctx:JcadContext = 
                          CTXM.getContext(JarsConnectorRefs.TRACE_CONNECTOR_REF);
     return DCM.getDecorator(JarsConnectorRefs.TRACE_CONNECTOR_REF, ctx)
               .decorate(target, key, descriptor, params);

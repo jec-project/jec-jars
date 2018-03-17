@@ -49,7 +49,7 @@ export function CookieParam(target:any, propertyKey:string | symbol,
   // JCAD API
   //////////////////////////////////////////////////////////////////////////////
 
-  var ctx:JcadContext = 
+  const ctx:JcadContext = 
                   CTXM.getContext(JarsConnectorRefs.COOKIE_PARAM_CONNECTOR_REF);
   DCM.getDecorator(JarsConnectorRefs.COOKIE_PARAM_CONNECTOR_REF, ctx)
       .decorate(target, propertyKey, parameterIndex);

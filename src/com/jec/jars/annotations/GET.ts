@@ -48,7 +48,7 @@ export function GET(params?:HttpMethodParams):Function {
     // JCAD API
     ////////////////////////////////////////////////////////////////////////////
 
-    var ctx:JcadContext = CTXM.getContext(JarsConnectorRefs.GET_CONNECTOR_REF);
+    const ctx:JcadContext = CTXM.getContext(JarsConnectorRefs.GET_CONNECTOR_REF);
     return DCM.getDecorator(JarsConnectorRefs.GET_CONNECTOR_REF, ctx)
               .decorate(target, key, descriptor, params);
   }
