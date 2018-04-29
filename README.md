@@ -1,6 +1,6 @@
 # JEC JARS Project
 
-JEC JARS is a [JavaScript Entreprise Container][jec-url] project focused on the implementation of RESTful web services in JEC applications.
+JEC JARS is a [JavaScript Enterprise Container][jec-url] project focused on the implementation of RESTful web services in JEC applications.
 
 [![][jec-logo]][jec-url]
 
@@ -88,5 +88,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-[jec-url]: https://github.com/pechemann/JEC
+[jec-url]: http://jecproject.org
 [jec-logo]: https://raw.githubusercontent.com/pechemann/JEC/master/assets/jec-logos/jec-logo.png
