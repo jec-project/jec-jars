@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pechemann/jec-jars.git"
+    "url": "git+https://github.com/jec-project/jec-jars.git"
   },
   "keywords": [
     "JEC",
@@ -25,9 +25,9 @@
   "author": "Pascal ECHEMANN",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/pechemann/jec-jars/issues"
+    "url": "https://github.com/jec-project/jec-jars/issues"
   },
-  "homepage": "https://github.com/pechemann/jec-jars#readme",
+  "homepage": "https://github.com/jec-project/jec-jars#readme",
   "dependencies": {
     "jec-commons": "^1.1.8"
   },
