@@ -28,12 +28,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@Destroy</code> decorator defines a reference to a resource  
  * finalization method in the JARS specification.
  *
- * ```javascript
-Destroy()
-public finalizeMethod():void {
-  // Code here...
-}
-```
+ * [[include:Destroy.md]]
  */
 export function Destroy():Function {
     

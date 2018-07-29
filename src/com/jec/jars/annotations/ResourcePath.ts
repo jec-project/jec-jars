@@ -28,12 +28,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@ResourcePath</code> decorator defines a resource in the JARS
  * specification.
  *
- * ```javascript
-ResourcePath("sample.api")
-export class ResourceClass {
-  // Code here...
-}
-```
+ * [[include:ResourcePath.md]]
  * 
  * @param {string} path the URI path for this resource.
  */

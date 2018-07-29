@@ -31,11 +31,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * to the URI  path template variable name specified in the HTTP method
  * signature.
  *
- * ```javascript
-public cookieInfo(Exit exit:Function, CookieParam param:any):void {
-  // Code here...
-}
-```
+ * [[include:CookieParam.md]]
  *
  * @param {any} target the prototype of the class for the instance member.
  * @param {string|symbol} propertyKey the name of the member.

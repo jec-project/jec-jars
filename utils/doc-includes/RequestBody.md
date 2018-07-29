@@ -1,0 +1,3 @@
+public requestBodyInfo(Exit exit:Function, RequestBody body:any):void {
+  // Code here...
+}

@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@POST</code> decorator defines a <code>POST</code> HTTP method in 
  * the JARS specification.
  *
- * ```javascript
-POST()
-public postMethod(Exit exit:Function):void {
-  // Code here...
-}
-```
+ * [[include:POST.md]]
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.

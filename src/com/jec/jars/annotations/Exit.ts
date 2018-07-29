@@ -28,12 +28,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@Exit</code> decorator is the function parameter defined by the  
  * JARS specification to send your data to an HTTP response.
  *
- * ```javascript
-GET()
-sayHello(Exit exit:Function):void {
-  exit("Hello World!");
-}
-```
+ * [[include:Exit.md]]
  *
  * @param {any} target the prototype of the class for the instance member.
  * @param {string|symbol} propertyKey the name of the member.

@@ -1,0 +1,3 @@
+public pathInfo(Exit exit:Function, PathParam param:any):void {
+  // Code here...
+}

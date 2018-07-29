@@ -28,12 +28,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@Init</code> decorator defines a reference to a resource  
  * initialization method in the JARS specification.
  *
- * ```javascript
-Init()
-public initMethod():void {
-  // Code here...
-}
-```
+ * [[include:Init.md]]
  */
 export function Init():Function {
 

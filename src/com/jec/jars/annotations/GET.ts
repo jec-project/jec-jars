@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@GET</code> decorator defines a <code>GET</code> HTTP method in the 
  * JARS specification.
  *
- * ```javascript
-GET()
-public getMethod(Exit exit:Function):void {
-  // Code here...
-}
-```
+ * [[include:GET.md]]
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.

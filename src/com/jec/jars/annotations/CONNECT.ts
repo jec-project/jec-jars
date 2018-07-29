@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@CONNECT</code> decorator defines a <code>CONNECT</code> HTTP 
  * method in the JARS specification.
  *
- * ```javascript
-CONNECT()
-public connectMethod(Exit exit:Function):void {
-  // Code here...
-}
-```
+ * [[include:CONNECT.md]]
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.

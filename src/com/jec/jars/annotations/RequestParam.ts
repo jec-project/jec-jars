@@ -29,11 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * can extract for use in your resource class. Request parameters are extracted  
  * from the jslet container.
  *
- * ```javascript
-public requestInfo(Exit exit:Function, RequestParam request:HttpRequest):void {
-  // Code here...
-}
-```
+ * [[include:RequestParam.md]]
  *
  * @param {any} target the prototype of the class for the instance member.
  * @param {string|symbol} propertyKey the name of the member.

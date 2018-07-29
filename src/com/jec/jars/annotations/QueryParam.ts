@@ -29,11 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * can extract for use in your resource class.  Query parameters are extracted  
  * from the request URI query parameters.
  * 
- * ```javascript
-public requestQueryInfo(Exit exit:Function, QueryParam param:any):void {
-  // Code here...
-}
-```
+ * [[include:QueryParam.md]]
  *
  * @param {any} target the prototype of the class for the instance member.
  * @param {string|symbol} propertyKey the name of the member.

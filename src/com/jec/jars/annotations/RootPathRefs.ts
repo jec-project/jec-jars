@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@RootPathRefs</code> decorator defines a resource in the JARS
  * specification.
  *
- * ```javascript
-RootPathRefs(["apiv1"])
-export class ResourceClass() {
-  // Code here...
-}
-```
+ * [[include:RootPathRefs.md]]
  *
  * @param {HttpMethodParams} [params] the parameter for this object.
  */

@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@HEAD</code> decorator defines a <code>HEAD</code> HTTP method in 
  * the JARS specification.
  *
- * ```javascript
-HEAD()
-public headMethod(Exit exit:Function):void {
-  // Code here...
-}
-```
+ * [[include:HEAD.md]]
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.

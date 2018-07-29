@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@DELETE</code> decorator defines a <code>DELETE</code> HTTP method 
  * in the JARS specification.
  *
- * ```javascript
-DELETE()
-public deleteMethod(Exit exit:Function):void {
-  // Code here...
-}
-```
+ * [[include:DELETE.md]]
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.

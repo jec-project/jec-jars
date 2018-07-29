@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@PUT</code> decorator defines a<code>PUT</code> HTTP method in the 
  * JARS specification.
  *
- * ```javascript
-PUT()
-public putMethod(Exit exit:Function):void {
-  // Code here...
-}
-```
+ * [[include:PUT.md]]
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.

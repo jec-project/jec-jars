@@ -29,18 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@RootPath</code> decorator defines a versioned resource API in the 
  * JARS specification.
  *
- * ```javascript
-RootPath({
-  path: "/sample.api",
-  ref: "v1.O"
-  version: {
-      prefix: "v",
-      major: 1,
-      minor: 0
-  }
-})
-export class ResourceApi_v_1_0 {}
-```
+ * [[include:RootPath.md]]
  *
  * @param {RoutePathParams} params the route parameters for this decorator.
  */

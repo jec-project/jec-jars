@@ -1,0 +1,3 @@
+public requestInfo(Exit exit:Function, RequestParam request:HttpRequest):void {
+  // Code here...
+}

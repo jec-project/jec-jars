@@ -30,11 +30,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * from the request URI, and the parameter names correspond to the URI path 
  * template variable names specified in the HTTP method signature.
  * 
- * ```javascript
-public pathInfo(Exit exit:Function, PathParam param:any):void {
-  // Code here...
-}
-```
+ * [[include:PathParam.md]]
  *
  * @param {any} target the prototype of the class for the instance member.
  * @param {string|symbol} propertyKey the name of the member.

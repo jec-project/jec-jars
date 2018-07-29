@@ -1,5 +1,9 @@
 # JEC JARS Project
 
+[![JEC version](https://img.shields.io/badge/JEC-1.0-%23ba00ff.svg)](http://jecproject.org)
+[![npm version](https://badge.fury.io/js/jec-jars.svg)](https://www.npmjs.com/package/jec-jars)
+[![Apache 2.0](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
 JEC JARS is a [JavaScript Enterprise Container][jec-url] project focused on the implementation of RESTful web services in JEC applications.
 
 [![][jec-logo]][jec-url]
@@ -65,7 +69,7 @@ The documentation generator is [TypeDoc](http://typedoc.org/)
 
 ## Update Release Notes
 
-**Current stable release:** [1.0.9](CHANGELOG.md#jec-jars-1.0.9)
+**Current stable release:** [1.1.1](CHANGELOG.md#jec-jars-1.1.1)
  
 For a complete listing of release notes for all JEC JARS update releases, see the [CHANGELOG](CHANGELOG.md) file. 
 

@@ -111,7 +111,8 @@ module.exports = function(grunt) {
         out: "docs/api-reference",
         readme: "README.md",
         name: "JEC JARS Project",
-        exclude: "**/*Test*.ts"
+        exclude: "**/*Test*.ts",
+        includes: "utils/doc-includes"
       }
     }
   });

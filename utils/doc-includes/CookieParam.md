@@ -1,0 +1,3 @@
+public cookieInfo(Exit exit:Function, CookieParam param:any):void {
+  // Code here...
+}

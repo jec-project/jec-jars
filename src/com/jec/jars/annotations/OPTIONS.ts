@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@OPTIONS</code> decorator defines a <code>OPTIONS</code> HTTP 
  * method in the JARS specification.
  *
- * ```javascript
-OPTIONS()
-public optionsMethod(Exit exit:Function):void {
-  // Code here...
-}
-```
+ * [[include:OPTIONS.md]]
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.

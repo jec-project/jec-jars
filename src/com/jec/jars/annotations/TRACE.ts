@@ -29,12 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * The <code>@TRACE</code> decorator defines a <code>TRACE</code> HTTP method in
  * the JARS specification.
  *
- * ```javascript
-TRACE()
-public traceMethod(Exit exit:Function):void {
-  // Code here...
-}
-```
+ * [[include:TRACE.md]]
  *
  * @param {HttpMethodParams} [params] the parameters for the associated HTTP
  *                                    method.

@@ -29,11 +29,7 @@ const CTXM:JcadContextManager = JcadContextManager.getInstance();
  * can extract for use in your resource class. Body parameters are extracted  
  * from the HTTP request body.
  * 
- * ```javascript
-public requestBodyInfo(Exit exit:Function, RequestBody body:any):void {
-  // Code here...
-}
-```
+ * [[include:RequestBody.md]]
  *
  * @param {any} target the prototype of the class for the instance member.
  * @param {string|symbol} propertyKey the name of the member.
