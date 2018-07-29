@@ -34,14 +34,14 @@ class TestDecorator implements Decorator {
 }
 export const KEY:string = "optionsMethod";
 export const TEST_DECORATOR:Decorator = new TestDecorator();
-export const buildClassRef:Function = function():void {
-  let ClassRef:any = LOADER.loadClass(VALID_CLASS);
-  new ClassRef();
+export const buildClassRef:Function = function():any {
+  const ClassRef:any = LOADER.loadClass(VALID_CLASS);
+  return new ClassRef();
 };
 export const initContext:Function = function():JcadContext {
-  let factory:JcadContextFactory = new JcadContextFactory();
-  let connector = new TestConnector(JarsConnectorRefs.OPTIONS_CONNECTOR_REF, TEST_DECORATOR);
-  let context:JcadContext = factory.create();
+  const factory:JcadContextFactory = new JcadContextFactory();
+  const connector = new TestConnector(JarsConnectorRefs.OPTIONS_CONNECTOR_REF, TEST_DECORATOR);
+  const context:JcadContext = factory.create();
   DecoratorConnectorManager.getInstance().addConnector(connector, context);
   JcadContextManager.getInstance().addContext(JarsConnectorRefs.OPTIONS_CONNECTOR_REF, context);
   return context;
