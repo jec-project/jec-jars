@@ -28,14 +28,14 @@ describe("JarsError", ()=> {
 
   describe("instanceOf(Error)", ()=> {
     it("JarsError should extend Error", function() {
-      let error:JarsError = new JarsError(null);
+      const error:JarsError = new JarsError(null);
       expect(error).to.be.instanceOf(Error);
     });
   });
 
   describe("#message", ()=> {
     it("should return the same string as passed in the class constructor", function() {
-      let error:JarsError = new JarsError(utils.ERROR_MSG);
+      const error:JarsError = new JarsError(utils.ERROR_MSG);
       expect(error.message).to.equal(utils.ERROR_MSG);
     });
   });

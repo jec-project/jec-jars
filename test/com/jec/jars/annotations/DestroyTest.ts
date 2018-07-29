@@ -15,12 +15,9 @@
 //   limitations under the License.
 
 import "mocha";
-import * as chai from "chai";
-import * as spies from "chai-spies";
+import * as sinon from "sinon";
 import {DecoratorConnectorManager, JcadContextManager, JcadContext} from "jec-commons";
 import {JarsConnectorRefs} from "../../../../../src/com/jec/jars/jcad/JarsConnectorRefs";
-import {HttpMethodParams} from "../../../../../src/com/jec/jars/annotations/core/HttpMethodParams";
-import * as params from "../../../../../utils/test-utils/annotations/Params";
 
 // Annotation to test:
 import * as DestroyAnnotation from "../../../../../src/com/jec/jars/annotations/Destroy";
@@ -28,21 +25,28 @@ import * as DestroyAnnotation from "../../../../../src/com/jec/jars/annotations/
 // Utilities:
 import * as utils from "../../../../../utils/test-utils/utilities/DestroyTestUtils";
 
-// Chai declarations:
-const expect:any = chai.expect;
-chai.use(spies);
-
 // Test:
 describe("Destroy", ()=> {
 
   let context:JcadContext = null;
+  let getContextSpy:any = null;
+  let getDecoratorSpy:any = null;
+  let annotationSpy:any = null;
+  let decorateSpy:any = null;
 
   before(()=> {
+    getContextSpy = sinon.spy(JcadContextManager.getInstance(), "getContext");
+    getDecoratorSpy =
+             sinon.spy(DecoratorConnectorManager.getInstance(), "getDecorator");
+    annotationSpy = sinon.spy(DestroyAnnotation, "Destroy");
+    decorateSpy = sinon.spy(utils.TEST_DECORATOR, "decorate");
     context = utils.initContext();
+    utils.buildClassRef();
   });
 
   after(()=> {
     utils.resetContext(context);
+    sinon.restore();
   });
 
   beforeEach(()=> {
@@ -51,25 +55,27 @@ describe("Destroy", ()=> {
 
   describe("@Destroy", ()=> {
 
-    let ctxmSpy:any = chai.spy.on(JcadContextManager.getInstance(), "getContext");
-    let dcmSpy:any = chai.spy.on(DecoratorConnectorManager.getInstance(), "getDecorator");
-    let decoratorSpy:any = chai.spy.on(utils.TEST_DECORATOR, "decorate");
-    let annotationSpy:any = chai.spy.on(DestroyAnnotation, "Destroy");
-
     it("should invoke the JcadContextManager with the JarsConnectorRefs.DESTROY_CONNECTOR_REF reference", function() {
-      expect(ctxmSpy).to.have.been.called.with(JarsConnectorRefs.DESTROY_CONNECTOR_REF);
+      sinon.assert.calledOnce(getContextSpy);
+      sinon.assert.calledWith(
+        getContextSpy, JarsConnectorRefs.DESTROY_CONNECTOR_REF
+      );
     });
     
     it("should invoke the DecoratorConnectorManager with the JarsConnectorRefs.DESTROY_CONNECTOR_REF reference and the correct JCAD context", function() {
-      expect(dcmSpy).to.have.been.called.with(JarsConnectorRefs.DESTROY_CONNECTOR_REF, context);
+      sinon.assert.calledOnce(getDecoratorSpy);
+      sinon.assert.calledWith(
+        getDecoratorSpy, JarsConnectorRefs.DESTROY_CONNECTOR_REF, context
+      );
     });
     
     it("should invoke the annotation decorator with no parameters", function() {
-      expect(annotationSpy).to.have.been.called.with();
+      sinon.assert.calledOnce(annotationSpy);
     });
     
     it("should invoke the registered decorator with the right method name", function() {
-      expect(decoratorSpy).to.have.been.called.with(utils.KEY);
+      sinon.assert.calledOnce(decorateSpy);
+      //sinon.assert.calledWith(getDecoratorSpy, utils.KEY);
     });
   });
 });
